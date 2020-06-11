@@ -1,3 +1,4 @@
+  
 import React,{useState} from 'react';
 import './App.css';
 
@@ -21,10 +22,11 @@ const handleSubmit =(e)=>{
   newArr .push(newtask);
   setTasks(newArr);
 }
-const Header = (props)=>{
+const Header = (props) => {
   return(
-    <h1>Amine<strong {props.numTodos} </strong> 
-    </h1>
+    <h2>
+    amine <strong  className='blink'>{props.numTodos}</strong> Todos
+   </h2>
   )
 }
 const numTodos =(props)=>{
@@ -46,7 +48,7 @@ const TodoList = (props)=>{
       </div>
   );
 }
-const submitForm=>{
+const SubmitForm =() => {
   return(
     <from onSubmit ={event=> handleSubmit(event)}>
       <input type ="text" name ="newTask" defaultValue="" placeholder="add new task " required/>
@@ -54,6 +56,7 @@ const submitForm=>{
     </from>
   );
 }
+return(
   <div className="ToDoContainer">
     <Header numTodos={tasks.length}/>
     <TodoList tasks={tasks}/>
